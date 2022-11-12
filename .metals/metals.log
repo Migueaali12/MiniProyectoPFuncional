@@ -14,3 +14,19 @@
 2022.11.06 14:27:24 INFO  
 2022.11.06 14:27:24 INFO  time: ran 'giter8.Giter8' in 4.58s
 2022.11.06 14:27:36 INFO  shutting down Metals
+2022.11.12 13:31:47 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at c:\Users\Miguel Alvarez\Documents\MiniProyectoPFuncional\.metals\lsp.trace.json or C:\Users\Miguel Alvarez\AppData\Local\scalameta\metals\cache\lsp.trace.json
+2022.11.12 13:31:51 INFO  logging to file C:\Users\Miguel Alvarez\Documents\MiniProyectoPFuncional\.metals\metals.log
+2022.11.12 13:31:51 INFO  Started: Metals version 0.11.9 in workspace 'C:\Users\Miguel Alvarez\Documents\MiniProyectoPFuncional' for client Visual Studio Code 1.73.1.
+2022.11.12 13:31:51 WARN  Can't instantiate JavaInteractiveSemanticdb (version: JdkVersion(8), jdkHome: C:\Program Files\Java\jre1.8.0_351, javac exists: false)
+2022.11.12 13:31:53 INFO  time: initialize in 2.02s
+2022.11.12 13:31:53 WARN  Build server is not auto-connectable.
+2022.11.12 13:31:53 WARN  no build tool detected in workspace 'C:\Users\Miguel Alvarez\Documents\MiniProyectoPFuncional'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.11.12 13:32:36 INFO  shutting down Metals
+2022.11.12 13:33:36 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at c:\Users\Miguel Alvarez\Documents\MiniProyectoPFuncional\.metals\lsp.trace.json or C:\Users\Miguel Alvarez\AppData\Local\scalameta\metals\cache\lsp.trace.json
+2022.11.12 13:33:39 INFO  logging to file C:\Users\Miguel Alvarez\Documents\MiniProyectoPFuncional\.metals\metals.log
+2022.11.12 13:33:39 INFO  Started: Metals version 0.11.9 in workspace 'C:\Users\Miguel Alvarez\Documents\MiniProyectoPFuncional' for client Visual Studio Code 1.73.1.
+2022.11.12 13:33:39 WARN  Can't instantiate JavaInteractiveSemanticdb (version: JdkVersion(8), jdkHome: C:\Program Files\Java\jre1.8.0_351, javac exists: false)
+2022.11.12 13:33:41 INFO  time: initialize in 1.31s
+2022.11.12 13:33:41 WARN  Build server is not auto-connectable.
+2022.11.12 13:33:41 WARN  no build tool detected in workspace 'C:\Users\Miguel Alvarez\Documents\MiniProyectoPFuncional'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.11.12 13:34:17 INFO  shutting down Metals
