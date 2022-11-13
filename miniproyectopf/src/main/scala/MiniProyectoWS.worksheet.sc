@@ -27,3 +27,32 @@ def simpsonCompuesta(a: Double, b: Double, n: Int, f: Double => Double) = {
 simpsonSimple(3, 5, x => (-math.pow(x, 2) + 8 * x - 12))
 simpsonCompuesta(3, 5, 10, x => (-math.pow(x, 2) + 8 * x - 12))
 
+//F2 
+
+simpsonSimple(0, 2, x => (3 * math.pow(x, 2)))
+simpsonCompuesta(0, 2, 6, x => (3 * math.pow(x, 2)))
+
+//F3
+
+simpsonSimple(-1, 1, x => (x + 2 * math.pow(x, 2) - math.pow(x, 3) + 5 * math.pow(x, 4)))
+simpsonCompuesta(-1, 1, 6, x => (x + 2 * math.pow(x, 2) - math.pow(x, 3) + 5 * math.pow(x, 4)))
+
+//F4
+
+simpsonSimple(1, 2, x => ((2 * x + 1) / (math.pow(x, 2) + x)))
+simpsonCompuesta(1, 2, 8, x => ((2 * x + 1) / (math.pow(x, 2) + x)))
+
+//F5
+
+simpsonSimple(0, 1, x => (math.pow(math.E, x)))
+simpsonCompuesta(0, 1, 2, x => (math.pow(math.E, x)))
+
+//F6
+
+simpsonSimple(2, 3, x => (1 / math.sqrt(x - 1)))
+simpsonCompuesta(2, 3, 12, x => (1 / math.sqrt(x - 1)))
+
+//F7
+
+simpsonSimple(0, 1, x => (1 / (1 + math.pow(x, 2))))
+simpsonCompuesta(0, 1, 8, x => (1 / (1 + math.pow(x, 2))))
