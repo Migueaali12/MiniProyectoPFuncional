@@ -8,24 +8,35 @@ def simpsonSimple(a: Int, b: Int, f: Double => Double) = {
     (b - a) * (fa + 4 * fi + fb) / 6
 }
 
-//Simpson Compuesta
+//Simpson 1/3 Compuesta
 
 def simpsonCompuesta(a: Double, b: Double, n: Int, f: Double => Double) = {
     val h = ((b - a) / n)
     val x = new Array[Double](n+1) 
     x(0) = a
-    val j = (1 to n).map(z => x(z) = (a + h * z))
-    val i = (1 to n / 2).map(z => (f(x(2 * z - 2)) + 4 * f(x(2 * z - 1)) + f(x(2 * z)))).sum
+    val j = (1 to n).map(j => x(j) = (a + h * j))
+    val i = (1 to n / 2).map(j => (f(x(2 * j - 2)) + 4 * f(x(2 * j - 1)) + f(x(2 * j)))).sum
     (i * h) / 3
 }
 
-// Simpson Extendida
+// Simpson 1/3 Extendida
 
+def simpsonExtendida(a: Double, b: Double, f: Double => Double) = {
+    val n = 2 * (b - a).toInt
+    val h = (b - a / n)
+    var x = 0.0
+    for (i <- 1 to n - 1; j <- 2 to n - 2) {
+        x = (f(a) + 4 * f(a + i * h) + 2 * f(a + j * h) + f(b))
+        
+    } 
+    (x * h) / 3
+}
 
 // F1
 
 simpsonSimple(3, 5, x => (-math.pow(x, 2) + 8 * x - 12))
 simpsonCompuesta(3, 5, 10, x => (-math.pow(x, 2) + 8 * x - 12))
+simpsonExtendida(3, 5, x => (-math.pow(x, 2) + 8 * x - 12))
 
 //F2 
 
