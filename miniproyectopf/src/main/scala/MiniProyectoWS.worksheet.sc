@@ -24,12 +24,10 @@ def simpsonCompuesta(a: Double, b: Double, n: Int, f: Double => Double) = {
 def simpsonExtendida(a: Double, b: Double, f: Double => Double) = {
     val n = 2 * (b - a).toInt
     val h = (b - a / n)
-    var x = 0.0
-    for (i <- 1 to n - 1; j <- 2 to n - 2) {
-        x = (f(a) + 4 * f(a + i * h) + 2 * f(a + j * h) + f(b))
-        
-    } 
-    (x * h) / 3
+    val x1 = f(a) + 4
+    val x2 = (1 to n - 1).map(i => f(a + i * h) + 2).sum
+    val x3 = (2 to n - 2).map(j => f(a + j * h + f(b))).sum
+    (x1 * x2 * x3) * h / 3
 }
 
 // F1
@@ -42,6 +40,7 @@ simpsonExtendida(3, 5, x => (-math.pow(x, 2) + 8 * x - 12))
 
 simpsonSimple(0, 2, x => (3 * math.pow(x, 2)))
 simpsonCompuesta(0, 2, 6, x => (3 * math.pow(x, 2)))
+simpsonExtendida(0, 2, x => (3 * math.pow(x, 2)))
 
 //F3
 
