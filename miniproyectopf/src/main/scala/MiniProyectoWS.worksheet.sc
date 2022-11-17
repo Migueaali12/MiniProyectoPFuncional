@@ -22,12 +22,11 @@ def simpsonCompuesta(a: Double, b: Double, n: Int, f: Double => Double) = {
 // Simpson 1/3 Extendida
 
 def simpsonExtendida(a: Double, b: Double, f: Double => Double) = {
-    val n = 2 * (b - a).toInt
-    val h = (b - a / n)
-    val x1 = f(a) + 4
-    val x2 = (1 to n - 1).map(i => f(a + i * h) + 2).sum
-    val x3 = (2 to n - 2).map(j => f(a + j * h + f(b))).sum
-    (x1 * x2 * x3) * h / 3
+    val n = 2 * (b - a)
+    val h = (b - a) / n
+    val j = f(a) + 4 * (1 to (n - 1).toInt by 2).map(j => f(a + j * h)).sum
+    val i = 2 * (2 to (n - 2).toInt by 2).map(i => f(a + h * i)).sum + f(b)
+    (h / 3) * (i + j)
 }
 
 // F1
@@ -46,23 +45,28 @@ simpsonExtendida(0, 2, x => (3 * math.pow(x, 2)))
 
 simpsonSimple(-1, 1, x => (x + 2 * math.pow(x, 2) - math.pow(x, 3) + 5 * math.pow(x, 4)))
 simpsonCompuesta(-1, 1, 6, x => (x + 2 * math.pow(x, 2) - math.pow(x, 3) + 5 * math.pow(x, 4)))
+simpsonExtendida(-1, 1, x => (x + 2 * math.pow(x, 2) - math.pow(x, 3) + 5 * math.pow(x, 4)))
 
 //F4
 
 simpsonSimple(1, 2, x => ((2 * x + 1) / (math.pow(x, 2) + x)))
 simpsonCompuesta(1, 2, 8, x => ((2 * x + 1) / (math.pow(x, 2) + x)))
+simpsonExtendida(1, 2, x => ((2 * x + 1) / (math.pow(x, 2) + x)))
 
 //F5
 
 simpsonSimple(0, 1, x => (math.pow(math.E, x)))
 simpsonCompuesta(0, 1, 2, x => (math.pow(math.E, x)))
+simpsonExtendida(0, 1, x => (math.pow(math.E, x)))
 
 //F6
 
 simpsonSimple(2, 3, x => (1 / math.sqrt(x - 1)))
 simpsonCompuesta(2, 3, 12, x => (1 / math.sqrt(x - 1)))
+simpsonExtendida(2, 3, x => (1 / math.sqrt(x - 1)))
 
 //F7
 
 simpsonSimple(0, 1, x => (1 / (1 + math.pow(x, 2))))
 simpsonCompuesta(0, 1, 8, x => (1 / (1 + math.pow(x, 2))))
+simpsonExtendida(0, 1, x => (1 / (1 + math.pow(x, 2))))
