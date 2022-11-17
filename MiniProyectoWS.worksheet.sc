@@ -21,11 +21,11 @@ def simpsonCompuesta(a: Double, b: Double, n: Int, f: Double => Double) = {
 
 // Simpson 1/3 Extendida
 
-def simpsonExtendida(a: Double, b: Double, f: Double => Double) = {
+def simpsonExtendida(a: Int, b: Int, f: Double => Double) = {
     val n = 2 * (b - a)
-    val h = (b - a) / n
-    val j = f(a) + 4 * (1 to (n - 1).toInt by 2).map(j => f(a + j * h)).sum
-    val i = 2 * (2 to (n - 2).toInt by 2).map(i => f(a + h * i)).sum + f(b)
+    val h = (b - a) / n.toDouble
+    val j = f(a) + 4 * (1 to (n - 1) by 2).map(j => f(a + j * h)).sum
+    val i = f(b) + 2 * (2 to (n - 2) by 2).map(i => f(a + i * h)).sum 
     (h / 3) * (i + j)
 }
 
